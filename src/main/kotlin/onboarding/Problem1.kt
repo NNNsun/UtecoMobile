@@ -1,5 +1,19 @@
 package onboarding
-
 fun solution1(pobi: List<Int>, crong: List<Int>): Int {
-    TODO("프로그램 구현")
+
+}
+
+fun calculate(num: Int): Int {
+
+
+}
+
+
+
+fun choice(num1: Int,num2: Int):Int{
+
+}
+
+fun win(num1: Int, num2: Int): Int {
+
 }
