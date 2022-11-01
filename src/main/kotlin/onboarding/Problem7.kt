@@ -47,6 +47,11 @@ fun solution7(
             map.remove(key)
         }
     }
+    var list = mutableListOf<String>()
+    val result = map.toList().sortedByDescending() { (_, value) -> value}.toMap()
+    for (entry in result) {
+        list.add(entry.key)
+    }
 
 
 
