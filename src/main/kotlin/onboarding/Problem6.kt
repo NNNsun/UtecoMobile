@@ -9,6 +9,8 @@ fun solution6(forms: List<List<String>>) : List<String>{
         divWord = forms[i][1]
         for (i in 1 until divWord.length) {
             comparison = divWord[i - 1] + divWord[i].toString()
+            map[comparison] = map.getOrDefault(comparison,0)+1
+
         }
     }
     return result.sorted()
