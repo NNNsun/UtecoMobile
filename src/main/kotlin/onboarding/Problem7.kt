@@ -33,6 +33,13 @@ fun solution7(
             continue
         }
     }
+    for (i in visitors.indices){
+        if (!set.contains(visitors[i])){
+            map[visitors[i]] = map.getOrDefault(visitors[i], 0) + 1
+        }
+
+    }
+
 
     return list
 }
