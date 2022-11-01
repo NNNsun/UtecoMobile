@@ -9,7 +9,9 @@ fun solution4(word: String): String {
         if(key in 'a'..'z') {
             chaBuf[i]='z'-(chaBuf[i]-'a')
         }
-
+        else if(key in 'A'..'Z') {
+            chaBuf[i]='Z'-(word[i]-'A')
+        }
 
     }
     return String(chaBuf)
