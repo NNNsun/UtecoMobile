@@ -13,6 +13,13 @@ fun solution6(forms: List<List<String>>) : List<String>{
 
         }
     }
+    for (i in map) {
+        if(i.value>1){
+            for (j in 0 until len)
+                if(forms[j][1].contains(i.key))
+                    result.add(forms[j][0])
+        }
+    }
     return result.sorted()
 }
 
