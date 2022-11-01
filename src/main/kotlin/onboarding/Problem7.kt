@@ -52,9 +52,10 @@ fun solution7(
     for (entry in result) {
         list.add(entry.key)
     }
-
-
-
-
+    if (list.size>5){
+        for (i in 0 until list.size){
+            list.removeAt(i)
+        }
+    }
     return list
 }
