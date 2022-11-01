@@ -39,6 +39,16 @@ fun solution7(
         }
 
     }
+    var k=map.iterator()
+
+    while (k.hasNext()) {
+        var key = k.next().key
+        if (map[key] == 0) {
+            map.remove(key)
+        }
+    }
+
+
 
 
     return list
