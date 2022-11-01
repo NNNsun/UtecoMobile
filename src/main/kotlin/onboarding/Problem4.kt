@@ -1,5 +1,15 @@
 package onboarding
 
 fun solution4(word: String): String {
-    TODO("프로그램 구현")
+    var key=' '
+    var chaBuf =word.toCharArray()
+    var len = chaBuf.size
+    for(i in 0 until len){
+        key= chaBuf[i]
+        if(key in 'a'..'z') {
+            chaBuf[i]='z'-(chaBuf[i]-'a')
+        }
+
+    }
+    return String(chaBuf)
 }
