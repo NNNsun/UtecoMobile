@@ -18,6 +18,9 @@ fun solution5(money: Int): List<Int> {
         } else 2
         turn = !turn
     }
-
+    if (list.size < 10) {
+        for (i in list.size until totalUnit)
+            list.add(0)
+    }
     return list
 }
