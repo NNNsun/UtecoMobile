@@ -31,5 +31,8 @@ fun choice(num1: Int,num2: Int):Int{
 }
 
 fun win(num1: Int, num2: Int): Int {
+    return if (num1 > num2) 1
+    else if (num1 < num2) 2
+    else 0
 
 }
