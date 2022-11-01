@@ -10,6 +10,7 @@ fun solution4(word: String): String {
             chaBuf[i]='z'-(chaBuf[i]-'a')
         }
 
+
     }
     return String(chaBuf)
 }
