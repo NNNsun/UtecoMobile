@@ -55,6 +55,14 @@ class ApplicationTest : NsTest() {
         }
     }
 
+    @Test
+    fun `공백 예외 테스트`() {
+        assertSimpleTest {
+            assertThrows<IllegalArgumentException> { runException(" ") }
+        }
+    }
+
+
 
 
     override fun runMain() {
