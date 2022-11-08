@@ -69,12 +69,15 @@ private fun printScore(userScore: ScoreData): Boolean {
     val strike = userScore.strike
     val ball = userScore.ball
     var win = false
-    if (strike == 0 && ball == 0) print("낫싱")
-    if (ball > 0) print("${ball}볼 ")
-    if (strike in 1..2) print("${strike}스트라이크 ")
-    if (strike == 3) {
-        print("${strike}스트라이크 ")
-        win = true
+    when {
+        strike == 0 && ball == 0 -> print("낫싱")
+        ball > 0 && strike == 0 -> print("${ball}볼 ")
+        ball == 0 && strike > 0 && strike < 3 -> print("${strike}스트라이크 ")
+        ball > 0 && strike > 0 && strike < 3 -> print("${ball}볼 ${strike}스트라이크 ")
+        strike == 3 -> {
+            print("${strike}스트라이크 ")
+            win = true
+        }
     }
     println()
     return win
