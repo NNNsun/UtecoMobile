@@ -17,3 +17,15 @@ private fun makeComNumber(): List<String> {
     comNumber = randomNumber.toMutableList()
     return comNumber
 }
+
+private fun checkInputNumber(userNumber: List<String>) {
+    val numLength = mutableSetOf<String>()
+    for (comNumIdx in userNumber.indices) {
+        if (userNumber[comNumIdx].single() in '1'..'9') {
+            numLength.add(userNumber[comNumIdx])
+        }
+    }
+    if (userNumber.isEmpty() || numLength.size != 3) {
+        throw IllegalArgumentException()
+    }
+}
