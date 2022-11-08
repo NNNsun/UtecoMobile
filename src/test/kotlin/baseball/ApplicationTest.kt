@@ -41,6 +41,14 @@ class ApplicationTest : NsTest() {
         }
     }
 
+    @Test
+    fun `중복 숫자 입력 예외 테스트`() {
+        assertSimpleTest {
+            assertThrows<IllegalArgumentException> { runException("776") }
+        }
+    }
+
+
 
     override fun runMain() {
         main()
