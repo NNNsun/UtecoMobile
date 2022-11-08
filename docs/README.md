@@ -34,13 +34,10 @@
             1. 1을 입력하면 다시시작, 2를 입력하면 종료: when 사용
 
 - 추가 기능
-    1. `checkScore()`
-        1. 설명: `countScore()` 에서 index를 하나씩 증가시킬 때 사용
-        2. 고려사항: computer의 index인지 user의 index인지 알수있도록 변수명 만들기
-    2. `printScore()`
+    1.`printScore()`
         1. 설명: `ScoreData()` 인스턴스의 strike, ball의 값에따라 해당하는 문구(낫싱, 볼, 스트라이크)를 출력
         2. 고려사항
             1.  strike가 3일 경우 이겼다는 것을 알린다 : (boolean)win =true
-    3.  `playBall()`
+    2.`playBall()`
         1. 설명: 숫자야구게임을 진행한다.
         2. 고려사항 : 게임을 끝낼 것인 지 계속 할 것인지 판단 가능 해야한다
