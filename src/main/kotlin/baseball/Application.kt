@@ -3,9 +3,14 @@ package baseball
 import camp.nextstep.edu.missionutils.Randoms
 import camp.nextstep.edu.missionutils.Console
 
-
 fun main() {
-
+    var userChoice = true
+    val userScore: ScoreData = ScoreData()
+    println("숫자 야구 게임을 시작합니다.")
+    while (userChoice) {
+        val comNumber = makeComNumber()
+        userChoice = playBall(comNumber, userScore)
+    }
 }
 
 private fun makeComNumber(): List<String> {
