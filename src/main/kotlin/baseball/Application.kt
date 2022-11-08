@@ -86,6 +86,22 @@ private fun playAgain(): Boolean {
     return choice
 }
 
+private fun playBall(comNumber: List<String>, userScore: ScoreData): Boolean {
+    var gameOver = false
+    val newGame = true
+    while (!gameOver) {
+        userScore.ball = 0
+        userScore.strike = 0
+        print("숫자를 입력해주세요 : ")
+        val userNumber = Console.readLine().chunked(1)
+        checkInputNumber(userNumber)
+        countScore(comNumber, userNumber, userScore)
+        gameOver = printScore(userScore)
+    }
+    return if (playAgain()) newGame
+    else !newGame
+}
+
 data class ScoreData(
     var strike: Int = 0,
     var ball: Int = 0
