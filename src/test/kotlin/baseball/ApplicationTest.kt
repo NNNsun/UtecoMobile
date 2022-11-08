@@ -62,7 +62,12 @@ class ApplicationTest : NsTest() {
         }
     }
 
-
+    @Test
+    fun `null 예외 테스트`() {
+        assertSimpleTest {
+            assertThrows<IllegalArgumentException> { runException(null) }
+        }
+    }
 
 
     override fun runMain() {
