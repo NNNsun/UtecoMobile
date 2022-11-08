@@ -29,6 +29,24 @@ private fun checkInputNumber(userNumber: List<String>) {
         throw IllegalArgumentException()
     }
 }
+
+private fun checkScore(
+    userNumber: List<String>,
+    comNumber: List<String>,
+    comNumIdx: Int,
+    userNumIndex: Int,
+    userScore: ScoreData
+): ScoreData {
+    if (comNumber[comNumIdx] == userNumber[userNumIndex]) {
+        if (comNumIdx == userNumIndex) {
+            userScore.strike += 1
+        } else {
+            userScore.ball += 1
+        }
+    }
+    return userScore
+}
+
 data class ScoreData(
     var strike: Int = 0,
     var ball: Int = 0
