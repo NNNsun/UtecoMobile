@@ -29,3 +29,7 @@ private fun checkInputNumber(userNumber: List<String>) {
         throw IllegalArgumentException()
     }
 }
+data class ScoreData(
+    var strike: Int = 0,
+    var ball: Int = 0
+)
