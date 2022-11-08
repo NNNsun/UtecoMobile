@@ -75,6 +75,17 @@ private fun printScore(userScore: ScoreData): Boolean {
     return win
 }
 
+private fun playAgain(): Boolean {
+    var choice = true
+    println("3개의 숫자를 모두 맞히셨습니다! 게임 종료")
+    print("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.")
+    when (Console.readLine()) {
+        "1" -> choice = true
+        "2" -> choice = false
+    }
+    return choice
+}
+
 data class ScoreData(
     var strike: Int = 0,
     var ball: Int = 0
