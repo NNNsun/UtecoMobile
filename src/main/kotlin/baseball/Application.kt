@@ -47,6 +47,19 @@ private fun checkScore(
     return userScore
 }
 
+private fun countScore(
+    comNumber: List<String>,
+    userNumber: List<String>,
+    userScore: ScoreData
+): ScoreData {
+    for (comNumIdx in comNumber.indices) {
+        for (userNumIndex in userNumber.indices) {
+            checkScore(userNumber, comNumber, comNumIdx, userNumIndex, userScore)
+        }
+    }
+    return userScore
+}
+
 data class ScoreData(
     var strike: Int = 0,
     var ball: Int = 0
