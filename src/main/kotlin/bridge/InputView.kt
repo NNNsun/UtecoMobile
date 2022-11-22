@@ -23,4 +23,16 @@ class InputView {
         return input
     }
 
+    fun readGameCommand(): String {
+        println(Comment.InputComment.OVER.message)
+        val input = Console.readLine()
+        if (!(Exception(input).checkOverLength())) return readGameCommand()
+        if (!(Exception(input).checkLessLength())) return readGameCommand()
+        if (!(Exception(input).isString())) return readGameCommand()
+        if (!(Exception(input).checkUpperCase())) return readGameCommand()
+        if (!(Exception(input).checkDecision())) return readGameCommand()
+        return input
+    }
+
+
 }
