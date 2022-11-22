@@ -11,6 +11,17 @@ class Exception(var input: String) {
         }
     }
 
+    fun checkRange(): Boolean {
+        var intInput = input.toInt()
+        return try {
+            require(intInput in 3..20)
+            true
+        } catch (e: IllegalArgumentException) {
+            printError(BridgeSizeErrorState.RANGE.message)
+            false
+        }
+    }
+
     private fun printError(message: String) {
         val errorIntro = "[ERROR] "
         println(errorIntro + message)
