@@ -11,6 +11,15 @@ class OutputView {
         }
         return hit
     }
+    private fun printUp(word: String, currentSquare: Boolean): String {
+        var mapWord = SpecialSymbols.INIT.word
+        when {
+            word == "U" && currentSquare -> mapWord = "[ ${makeHit(currentSquare)} ]"
+            word == "U" && !currentSquare -> mapWord = "[ ${makeHit(currentSquare)} ]"
+            word == "D" -> mapWord = SpecialSymbols.BRACKET_BLANK.word
+        }
+        return mapWord
+    }
     fun printMap() {}
 
     fun printResult() {}
