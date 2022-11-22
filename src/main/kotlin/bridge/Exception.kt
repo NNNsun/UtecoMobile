@@ -62,6 +62,17 @@ class Exception(var input: String) {
         }
     }
 
+    fun checkDirection(): Boolean {
+        return try {
+            require(input == "U" || input == "D")
+            true
+        } catch (e: IllegalArgumentException) {
+            printError(PlayErrorState.CHOICE.message)
+            false
+        }
+    }
+
+
 
 
     private fun printError(message: String) {
