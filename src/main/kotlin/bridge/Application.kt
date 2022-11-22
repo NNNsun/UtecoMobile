@@ -1,5 +1,13 @@
 package bridge
 
 fun main() {
-    // TODO: 프로그램 구현
+    playSquidGame()
+}
+
+fun playSquidGame(){
+    OutputView().printGameStart()
+    val bridgeSize = InputView().readBridgeSize()
+    val bridgeMaker = BridgeMaker(BridgeRandomNumberGenerator())
+    val bridge=bridgeMaker.makeBridge(bridgeSize)
+    BridgeGame(bridge).tryMove()
 }
