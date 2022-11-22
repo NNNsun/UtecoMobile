@@ -42,6 +42,17 @@ class Exception(var input: String) {
         }
     }
 
+    fun isString(): Boolean {
+        return try {
+            require(input.elementAt(0) in 'A'..'Z' || input.elementAt(0) in 'a'..'z')
+            true
+        } catch (e: IllegalArgumentException) {
+            printError(PlayErrorState.STRING.message)
+            false
+        }
+    }
+
+
 
 
     private fun printError(message: String) {
