@@ -32,6 +32,17 @@ class Exception(var input: String) {
         }
     }
 
+    fun checkLessLength(): Boolean {
+        return try {
+            require(input.isNotEmpty())
+            true
+        } catch (e: IllegalArgumentException) {
+            printError(PlayErrorState.ZERO.message)
+            false
+        }
+    }
+
+
 
     private fun printError(message: String) {
         val errorIntro = "[ERROR] "
