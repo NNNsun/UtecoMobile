@@ -49,6 +49,7 @@ class BridgeGame(val bridge: List<String>) {
         var newBridge = bridgeMaker.toMutableList()
         newBridge.removeAt(0)
         addAnswer(myPick, true)
+        Controller().readCurrent(myPicks, bridgeAnswer)
         return move(newBridge)
     }
 
