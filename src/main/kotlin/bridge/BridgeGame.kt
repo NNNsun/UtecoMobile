@@ -1,6 +1,6 @@
 package bridge
 
-class BridgeGame {
+class BridgeGame (val bridge: List<String>){
     var countTry = 1
     var myPicks = mutableListOf<String>()
     var bridgeAnswer = mutableListOf<Boolean>()
@@ -43,7 +43,7 @@ class BridgeGame {
     fun retry(bridgeMaker: List<String>) {
         when (Controller().writeGameCommand()) {
             "R" -> { countTry++;clearAnswer()}
-            "Q" -> {}
+            "Q" -> {Controller().doneGame(bridgeMaker.size, countTry)}
         }
     }
 }
