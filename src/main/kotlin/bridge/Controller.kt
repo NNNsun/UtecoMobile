@@ -17,6 +17,10 @@ class Controller {
         println(Comment.GameComment.COUNT.message + countTry)
     }
 
+    fun readCurrent(currentBridge: List<String>, currentSquare: List<Boolean>) {
+        OutputView().printMap(currentBridge, currentSquare)
+    }
+
     enum class Result(val word: String) {
         SUCCESS("성공"),
         FAIL("실패"),
