@@ -24,7 +24,7 @@ class BridgeGame (val bridge: List<String>){
     fun move(currentBridge: List<String>) {
         when {
             currentBridge.isNotEmpty() -> {findAnswer(currentBridge, Controller().writeMoving())}
-            currentBridge.isEmpty() -> {}
+            currentBridge.isEmpty() -> {Controller().doneGame(currentBridge.size, countTry)}
         }
     }
     private fun findAnswer(currentBridge: List<String>, myPick: String) {
