@@ -22,6 +22,12 @@ class BridgeGame {
             currentBridge.isEmpty() -> {}
         }
     }
+    private fun findAnswer(currentBridge: List<String>, myPick: String) {
+        if (currentBridge[0] == myPick) {
+        } else {
+            addAnswer(myPick, false)
+        }
+    }
 
     fun retry() {}
 }
