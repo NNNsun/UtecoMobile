@@ -72,8 +72,15 @@ class Exception(var input: String) {
         }
     }
 
-
-
+    fun checkDecision(): Boolean {
+        return try {
+            require(input == "R" || input == "Q")
+            true
+        } catch (e: IllegalArgumentException) {
+            printError(PlayErrorState.OVER.message)
+            false
+        }
+    }
 
     private fun printError(message: String) {
         val errorIntro = "[ERROR] "
