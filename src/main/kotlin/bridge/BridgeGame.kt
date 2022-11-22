@@ -27,14 +27,9 @@ class BridgeGame(val bridge: List<String>) {
 
     fun move(currentBridge: List<String>) {
         when {
-            currentBridge.isNotEmpty() -> {
-                findAnswer(currentBridge, Controller().writeMoving())
-            }
+            currentBridge.isNotEmpty() -> findAnswer(currentBridge, Controller().writeMoving())
             currentBridge.isEmpty() -> {
-                Controller().readResult(
-                    myPicks,
-                    bridgeAnswer
-                );Controller().doneGame(currentBridge.size, countTry)
+                Controller().readResult(myPicks, bridgeAnswer);Controller().doneGame(currentBridge.size, countTry)
             }
         }
     }
@@ -57,10 +52,10 @@ class BridgeGame(val bridge: List<String>) {
         return move(newBridge)
     }
 
-    fun retry(bridgeMaker: List<String>) {
+    private fun retry(bridgeMaker: List<String>) {
         when (Controller().writeGameCommand()) {
             "R" -> {
-                countTry++;clearAnswer();tryMove()
+                countTry++; clearAnswer(); tryMove()
             }
             "Q" -> {
                 Controller().readResult(myPicks, bridgeAnswer); Controller().doneGame(bridgeMaker.size, countTry)
