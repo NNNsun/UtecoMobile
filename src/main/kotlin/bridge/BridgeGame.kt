@@ -1,6 +1,6 @@
 package bridge
 
-class BridgeGame (val bridge: List<String>){
+class BridgeGame(val bridge: List<String>) {
     var countTry = 1
     var myPicks = mutableListOf<String>()
     var bridgeAnswer = mutableListOf<Boolean>()
@@ -21,12 +21,21 @@ class BridgeGame (val bridge: List<String>){
         bridgeAnswer.clear()
     }
 
+    fun tryMove() {
+        move(bridge)
+    }
+
     fun move(currentBridge: List<String>) {
         when {
-            currentBridge.isNotEmpty() -> {findAnswer(currentBridge, Controller().writeMoving())}
-            currentBridge.isEmpty() -> {Controller().doneGame(currentBridge.size, countTry)}
+            currentBridge.isNotEmpty() -> {
+                findAnswer(currentBridge, Controller().writeMoving())
+            }
+            currentBridge.isEmpty() -> {
+                Controller().doneGame(currentBridge.size, countTry)
+            }
         }
     }
+
     private fun findAnswer(currentBridge: List<String>, myPick: String) {
         if (currentBridge[0] == myPick) {
             updateBridge(currentBridge, myPick)
@@ -35,6 +44,7 @@ class BridgeGame (val bridge: List<String>){
             retry(currentBridge)
         }
     }
+
     private fun updateBridge(bridgeMaker: List<String>, myPick: String) {
         var newBridge = bridgeMaker.toMutableList()
         newBridge.removeAt(0)
@@ -44,8 +54,12 @@ class BridgeGame (val bridge: List<String>){
 
     fun retry(bridgeMaker: List<String>) {
         when (Controller().writeGameCommand()) {
-            "R" -> { countTry++;clearAnswer()}
-            "Q" -> {Controller().doneGame(bridgeMaker.size, countTry)}
+            "R" -> {
+                countTry++;clearAnswer()
+            }
+            "Q" -> {
+                Controller().doneGame(bridgeMaker.size, countTry)
+            }
         }
     }
 }
