@@ -29,8 +29,10 @@ class BridgeGame (val bridge: List<String>){
     }
     private fun findAnswer(currentBridge: List<String>, myPick: String) {
         if (currentBridge[0] == myPick) {
+            updateBridge(currentBridge, myPick)
         } else {
             addAnswer(myPick, false)
+            retry(currentBridge)
         }
     }
     private fun updateBridge(bridgeMaker: List<String>, myPick: String) {
