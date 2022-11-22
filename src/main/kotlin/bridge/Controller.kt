@@ -7,4 +7,8 @@ class Controller {
     fun writeGameCommand(): String {
         return InputView().readGameCommand()
     }
+    enum class Result(val word: String) {
+        SUCCESS("성공"),
+        FAIL("실패"),
+    }
 }
