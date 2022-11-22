@@ -46,6 +46,9 @@ class OutputView {
         for (i in currentBridge.indices) words += printDown(currentBridge[i], currentSquare[i])
         cutExtra(words)
     }
+    fun printResult(currentBridge: List<String>, currentSquare: List<Boolean>) {
+        printMap(currentBridge, currentSquare)
+    }
 
     fun printMap() {}
 
