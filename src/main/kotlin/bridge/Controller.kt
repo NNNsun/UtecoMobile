@@ -21,6 +21,11 @@ class Controller {
         OutputView().printMap(currentBridge, currentSquare)
     }
 
+    fun readResult(currentBridge: List<String>, currentSquare: List<Boolean>) {
+        println(Comment.GameComment.RESULT.message)
+        OutputView().printResult(currentBridge, currentSquare)
+    }
+
     enum class Result(val word: String) {
         SUCCESS("성공"),
         FAIL("실패"),
