@@ -33,6 +33,4 @@ class InputView {
         if (!(Exception(input).checkDecision())) return readGameCommand()
         return input
     }
-
-
 }
