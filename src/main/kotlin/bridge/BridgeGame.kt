@@ -28,6 +28,12 @@ class BridgeGame {
             addAnswer(myPick, false)
         }
     }
+    private fun updateBridge(bridgeMaker: List<String>, myPick: String) {
+        var newBridge = bridgeMaker.toMutableList()
+        newBridge.removeAt(0)
+        addAnswer(myPick, true)
+        return move(newBridge)
+    }
 
     fun retry() {}
 }
