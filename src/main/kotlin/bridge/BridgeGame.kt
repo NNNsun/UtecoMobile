@@ -55,7 +55,7 @@ class BridgeGame(val bridge: List<String>) {
     fun retry(bridgeMaker: List<String>) {
         when (Controller().writeGameCommand()) {
             "R" -> {
-                countTry++;clearAnswer()
+                countTry++;clearAnswer();tryMove()
             }
             "Q" -> {
                 Controller().doneGame(bridgeMaker.size, countTry)
