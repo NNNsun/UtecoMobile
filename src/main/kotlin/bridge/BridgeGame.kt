@@ -31,7 +31,7 @@ class BridgeGame(val bridge: List<String>) {
                 findAnswer(currentBridge, Controller().writeMoving())
             }
             currentBridge.isEmpty() -> {
-                Controller().doneGame(currentBridge.size, countTry)
+                Controller().readResult(myPicks, bridgeAnswer);Controller().doneGame(currentBridge.size, countTry)
             }
         }
     }
