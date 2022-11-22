@@ -4,6 +4,7 @@ class OutputView {
     fun printGameStart() {
         println(Comment.GameComment.START.message)
     }
+
     private fun makeHit(currentSquare: Boolean): String {
         val hit = when (currentSquare) {
             true -> SpecialSymbols.ANSWER.word
@@ -11,6 +12,7 @@ class OutputView {
         }
         return hit
     }
+
     private fun printUp(word: String, currentSquare: Boolean): String {
         var mapWord = SpecialSymbols.INIT.word
         when {
@@ -20,6 +22,7 @@ class OutputView {
         }
         return mapWord
     }
+
     private fun printDown(word: String, currentSquare: Boolean): String {
         var mapWord = SpecialSymbols.INIT.word
         when {
@@ -29,10 +32,18 @@ class OutputView {
         }
         return mapWord
     }
+
+    private fun cutExtra(words: String) {
+        val newWords = words.replace(SpecialSymbols.EXTRA_BRACKET.word, SpecialSymbols.DIVIDER.word)
+            .replace(SpecialSymbols.PLUS.word, "\n")
+        println(newWords)
+    }
+
     fun printMap() {}
 
     fun printResult() {}
 }
+
 enum class SpecialSymbols(val word: String) {
     ANSWER("O"),
     MISTAKE("X"),
