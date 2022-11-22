@@ -40,6 +40,13 @@ class ApplicationTest : NsTest() {
         }
     }
 
+    @Test
+    fun `다리길이 3 미만 테스트`() {
+        assertSimpleTest {
+            runException("1")
+            assertThat(output()).contains(ERROR_MESSAGE)
+        }
+    }
 
 
     override fun runMain() {
