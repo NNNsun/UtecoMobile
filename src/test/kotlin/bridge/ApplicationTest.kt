@@ -64,6 +64,13 @@ class ApplicationTest : NsTest() {
         }
     }
 
+    @Test
+    fun `다리길이 음수 입력 테스트`() {
+        assertSimpleTest {
+            runException("-2")
+            assertThat(output()).contains(ERROR_MESSAGE)
+        }
+    }
 
     override fun runMain() {
         main()
