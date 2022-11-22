@@ -72,6 +72,15 @@ class ApplicationTest : NsTest() {
         }
     }
 
+    @Test
+    fun `다리길이 정수가 아닌 실수 입력 테스트`() {
+        assertSimpleTest {
+            runException("0.32")
+            assertThat(output()).contains(ERROR_MESSAGE)
+        }
+    }
+
+
     override fun runMain() {
         main()
     }
