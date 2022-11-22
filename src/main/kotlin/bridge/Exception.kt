@@ -52,6 +52,15 @@ class Exception(var input: String) {
         }
     }
 
+    fun checkUpperCase(): Boolean {
+        return try {
+            require(input == input.uppercase())
+            true
+        } catch (e: IllegalArgumentException) {
+            printError(PlayErrorState.UPPERCASE.message)
+            false
+        }
+    }
 
 
 
