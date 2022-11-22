@@ -4,6 +4,13 @@ class OutputView {
     fun printGameStart() {
         println(Comment.GameComment.START.message)
     }
+    private fun makeHit(currentSquare: Boolean): String {
+        val hit = when (currentSquare) {
+            true -> SpecialSymbols.ANSWER.word
+            false -> SpecialSymbols.MISTAKE.word
+        }
+        return hit
+    }
     fun printMap() {}
 
     fun printResult() {}
