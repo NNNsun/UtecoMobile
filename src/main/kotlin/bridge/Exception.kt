@@ -1,6 +1,16 @@
 package bridge
 
 class Exception(var input: String) {
+    fun checkInteger(): Boolean {
+        return try {
+            input.toInt()
+            true
+        } catch (e: IllegalArgumentException) {
+            printError(BridgeSizeErrorState.INTEGER.message)
+            false
+        }
+    }
+
     private fun printError(message: String) {
         val errorIntro = "[ERROR] "
         println(errorIntro + message)
