@@ -31,7 +31,10 @@ class BridgeGame(val bridge: List<String>) {
                 findAnswer(currentBridge, Controller().writeMoving())
             }
             currentBridge.isEmpty() -> {
-                Controller().readResult(myPicks, bridgeAnswer);Controller().doneGame(currentBridge.size, countTry)
+                Controller().readResult(
+                    myPicks,
+                    bridgeAnswer
+                );Controller().doneGame(currentBridge.size, countTry)
             }
         }
     }
@@ -60,7 +63,7 @@ class BridgeGame(val bridge: List<String>) {
                 countTry++;clearAnswer();tryMove()
             }
             "Q" -> {
-                Controller().doneGame(bridgeMaker.size, countTry)
+                Controller().readResult(myPicks, bridgeAnswer); Controller().doneGame(bridgeMaker.size, countTry)
             }
         }
     }
