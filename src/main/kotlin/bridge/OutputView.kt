@@ -39,6 +39,14 @@ class OutputView {
         println(newWords)
     }
 
+    fun printMap(currentBridge: List<String>, currentSquare: List<Boolean>) {
+        var words = SpecialSymbols.INIT.word
+        for (i in currentBridge.indices) words += printUp(currentBridge[i], currentSquare[i])
+        words += SpecialSymbols.PLUS.word
+        for (i in currentBridge.indices) words += printDown(currentBridge[i], currentSquare[i])
+        cutExtra(words)
+    }
+
     fun printMap() {}
 
     fun printResult() {}
