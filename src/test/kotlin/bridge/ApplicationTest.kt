@@ -56,6 +56,15 @@ class ApplicationTest : NsTest() {
         }
     }
 
+    @Test
+    fun `다리길이 20 초과 테스트`() {
+        assertSimpleTest {
+            runException("22")
+            assertThat(output()).contains(ERROR_MESSAGE)
+        }
+    }
+
+
     override fun runMain() {
         main()
     }
