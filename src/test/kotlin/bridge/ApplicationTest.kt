@@ -33,12 +33,14 @@ class ApplicationTest : NsTest() {
     }
 
     @Test
-    fun `예외 테스트`() {
+    fun `다리길이 문자 입력 테스트`() {
         assertSimpleTest {
             runException("a")
             assertThat(output()).contains(ERROR_MESSAGE)
         }
     }
+
+
 
     override fun runMain() {
         main()
