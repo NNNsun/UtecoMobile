@@ -40,5 +40,10 @@ class BridgeGame {
         return move(newBridge)
     }
 
-    fun retry() {}
+    fun retry(bridgeMaker: List<String>) {
+        when (Controller().writeGameCommand()) {
+            "R" -> { countTry++;clearAnswer()}
+            "Q" -> {}
+        }
+    }
 }
