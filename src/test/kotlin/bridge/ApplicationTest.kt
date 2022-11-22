@@ -48,6 +48,13 @@ class ApplicationTest : NsTest() {
         }
     }
 
+    @Test
+    fun `다리길이 공백 입력 테스트`() {
+        assertSimpleTest {
+            runException(" ")
+            assertThat(output()).contains(ERROR_MESSAGE)
+        }
+    }
 
     override fun runMain() {
         main()
