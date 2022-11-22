@@ -23,7 +23,7 @@ class BridgeGame {
 
     fun move(currentBridge: List<String>) {
         when {
-            currentBridge.isNotEmpty() -> {}
+            currentBridge.isNotEmpty() -> {findAnswer(currentBridge, Controller().writeMoving())}
             currentBridge.isEmpty() -> {}
         }
     }
