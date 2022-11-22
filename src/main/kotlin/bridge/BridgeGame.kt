@@ -41,6 +41,7 @@ class BridgeGame(val bridge: List<String>) {
             updateBridge(currentBridge, myPick)
         } else {
             addAnswer(myPick, false)
+            Controller().readCurrent(myPicks, bridgeAnswer)
             retry(currentBridge)
         }
     }
