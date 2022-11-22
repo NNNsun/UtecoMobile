@@ -16,6 +16,11 @@ class BridgeGame {
         }
     }
 
+    private fun clearAnswer() {
+        myPicks.clear()
+        bridgeAnswer.clear()
+    }
+
     fun move(currentBridge: List<String>) {
         when {
             currentBridge.isNotEmpty() -> {}
