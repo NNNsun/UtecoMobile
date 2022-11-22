@@ -8,3 +8,12 @@ class OutputView {
 
     fun printResult() {}
 }
+enum class SpecialSymbols(val word: String) {
+    ANSWER("O"),
+    MISTAKE("X"),
+    BRACKET_BLANK("[   ]"),
+    EXTRA_BRACKET("]["),
+    INIT(""),
+    DIVIDER("|"),
+    PLUS("+")
+}
