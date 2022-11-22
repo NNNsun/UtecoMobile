@@ -22,6 +22,17 @@ class Exception(var input: String) {
         }
     }
 
+    fun checkOverLength(): Boolean {
+        return try {
+            require(input.length in 0..1)
+            true
+        } catch (e: IllegalArgumentException) {
+            printError(PlayErrorState.SIZE.message)
+            false
+        }
+    }
+
+
     private fun printError(message: String) {
         val errorIntro = "[ERROR] "
         println(errorIntro + message)
