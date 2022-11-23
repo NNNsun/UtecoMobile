@@ -11,7 +11,7 @@ class Exception(var input: String) {
             false
         }
     }
-    // [다리] 3~20까지 길이 체크
+    // [다리] 3~20까지 범위 체크
     fun checkRange(): Boolean {
         var intInput = input.toInt()
         return try {
