@@ -1,6 +1,7 @@
 package bridge
 
 class Exception(var input: String) {
+    // [다리] size 정수 체크
     fun checkInteger(): Boolean {
         return try {
             input.toInt()
@@ -10,7 +11,7 @@ class Exception(var input: String) {
             false
         }
     }
-
+    // [다리] 3~20까지 길이 체크
     fun checkRange(): Boolean {
         var intInput = input.toInt()
         return try {
@@ -21,7 +22,7 @@ class Exception(var input: String) {
             false
         }
     }
-
+    // [String] 한 글자 체크 ex) U/D/R/Q
     fun checkOverLength(): Boolean {
         return try {
             require(input.length in 0..1)
@@ -31,7 +32,7 @@ class Exception(var input: String) {
             false
         }
     }
-
+    // 공백 입력 체크
     fun checkLessLength(): Boolean {
         return try {
             require(input.isNotEmpty())
@@ -41,7 +42,7 @@ class Exception(var input: String) {
             false
         }
     }
-
+    //String 체크
     fun isString(): Boolean {
         return try {
             require(input.elementAt(0) in 'A'..'Z' || input.elementAt(0) in 'a'..'z')
@@ -51,7 +52,7 @@ class Exception(var input: String) {
             false
         }
     }
-
+    // 대문자인지  체크
     fun checkUpperCase(): Boolean {
         return try {
             require(input == input.uppercase())
@@ -61,7 +62,7 @@ class Exception(var input: String) {
             false
         }
     }
-
+    // U/D 체크
     fun checkDirection(): Boolean {
         return try {
             require(input == "U" || input == "D")
@@ -71,7 +72,7 @@ class Exception(var input: String) {
             false
         }
     }
-
+    // R/Q 체크
     fun checkDecision(): Boolean {
         return try {
             require(input == "R" || input == "Q")
@@ -81,17 +82,18 @@ class Exception(var input: String) {
             false
         }
     }
-
+    // 서두에 [ERROR] 붙이기
     private fun printError(message: String) {
         val errorIntro = "[ERROR] "
         println(errorIntro + message)
     }
-
+    
+    //다리 size 입력 멘트
     enum class BridgeSizeErrorState(val message: String) {
         INTEGER("다리 길이에 정수가 아닌 수는 포함 할 수 없습니다."),
         RANGE("다리 길이는 3부터 20 사이의 숫자여야 합니다.");
     }
-
+    //이동 및 게임 진행여부 멘트
     enum class PlayErrorState(val message: String) {
         ZERO("문자를 하나 이상 입력해 주세요."),
         SIZE("두 개 이상의 글자는 입력 할 수 없습니다."),
