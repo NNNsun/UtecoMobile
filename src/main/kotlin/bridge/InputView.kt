@@ -3,6 +3,7 @@ package bridge
 import camp.nextstep.edu.missionutils.Console
 
 class InputView {
+    // 1.다리 길이 입력 멘트 2.입력 3.검사
     fun readBridgeSize(): Int {
         println(Comment.InputComment.RANGE.message)
         val size = Console.readLine()
@@ -11,7 +12,7 @@ class InputView {
         }
         return size.toInt()
     }
-
+    // 1.U/D 입력 멘트 2.입력 3.검사
     fun readMoving(): String {
         println(Comment.InputComment.CHOICE.message)
         val input = Console.readLine()
@@ -22,7 +23,7 @@ class InputView {
         if (!(Exception(input).checkDirection())) return readMoving()
         return input
     }
-
+    // 1.R/Q 입력 멘트 2.입력 3.검사
     fun readGameCommand(): String {
         println(Comment.InputComment.OVER.message)
         val input = Console.readLine()
